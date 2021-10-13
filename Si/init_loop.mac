@@ -1,0 +1,11 @@
+/run/initialize
+/run/setCut 1 km
+/process/inactivate msc
+
+/control/execute setGPS.mac
+
+/control/loop array2.mac count 1 100 1
+
+
+
+

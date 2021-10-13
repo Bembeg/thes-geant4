@@ -1,0 +1,27 @@
+#optimal for 50x50 pixels
+
+/run/initialize
+
+# particle settings
+/gps/particle mu+
+
+# square plane source
+/gps/pos/centre -5 0 0 cm
+
+#particle distribution
+/gps/ang/type cos
+
+
+# angular particle distribution settings
+/gps/ang/rot1 0 -1 0
+/gps/ang/rot2 0 0 1
+/gps/ang/mintheta -0.1 deg
+/gps/ang/maxtheta 0.1 deg
+
+
+# energy distribution
+/gps/ene/mono 120. GeV
+
+/run/printProgress 100
+/run/beamOn 5
+

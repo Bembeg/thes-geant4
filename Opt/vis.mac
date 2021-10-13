@@ -1,0 +1,65 @@
+# Use this open statement to create an OpenGL view:
+/vis/open OGL 600x600-0+0
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw geometry:
+/vis/drawVolume
+
+# Make World invisible, set colors
+/vis/geometry/set/visibility World 0 0
+/vis/geometry/set/colour ScintBlock 0 1 1 1 0.5
+/vis/geometry/set/colour WLSTorus 0 0 1 0 0.7
+/vis/geometry/set/colour WLSTube 0 0 1 0 0.7
+/vis/geometry/set/colour TubeClad 0 0 1 0 0.3
+/vis/geometry/set/colour TorusClad 0 0 1 0 0.3
+/vis/geometry/set/colour DetTop 0 1 1 0 1
+/vis/geometry/set/colour DetBot 0 1 1 0 1
+/vis/geometry/set/colour DetLeft 0 1 1 0 1
+/vis/geometry/set/colour DetRight 0 1 1 0 1
+
+# Specify view angle:
+#/vis/viewer/set/viewpointThetaPhi 90. 0.
+
+# Specify zoom value:
+/vis/viewer/zoom 1.5
+
+# Specify style (surface or wireframe):
+/vis/viewer/set/style surface
+
+# Show axes
+#/vis/scene/add/axes
+
+# Drawing trajectories
+/vis/scene/add/trajectories rich
+#/vis/scene/add/trajectories smooth 
+#/vis/modeling/trajectories/create/drawByCharge
+#/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+#/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+
+#/vis/modeling/trajectories/create/drawByOriginVolume
+#/vis/modeling/trajectories/drawByOriginVolume-1/set WLSTube red
+#/vis/modeling/trajectories/drawByOriginVolume-1/set WLSTorus red
+
+
+
+/vis/modeling/trajectories/create/drawByEncounteredVolume
+#/vis/modeling/trajectories/drawByEncounteredVolume-1/default/setDrawStepPts true
+#/vis/modeling/trajectories/drawByEncounteredVolume-1/default/setStepPtsSize 2
+/vis/modeling/trajectories/drawByEncounteredVolume-1/set TubeBot red
+/vis/modeling/trajectories/drawByEncounteredVolume-1/set CladBot red
+/vis/modeling/trajectories/drawByEncounteredVolume-1/set TubeTop red
+/vis/modeling/trajectories/drawByEncounteredVolume-1/set CladTop red
+
+
+# To superimpose all of the events from a given run:
+/vis/scene/endOfEventAction accumulate
+
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+

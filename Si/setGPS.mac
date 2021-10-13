@@ -1,0 +1,27 @@
+# particle settings
+/gps/particle pi+
+
+# square plane source
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre -5 7.04 0 mm
+/gps/pos/rot1 0 0 -1
+/gps/pos/rot2 0 1 0
+/gps/pos/halfx 100 um
+/gps/pos/halfy 7.04 mm
+/gps/pos/halfz 200 um
+
+
+#particle distribution
+/gps/ang/type cos
+
+
+#angular particle distribution settings
+/gps/ang/rot1 0 -1 0
+/gps/ang/rot2 0 0 1
+/gps/ang/mintheta -0.1 deg
+/gps/ang/maxtheta 0.1 deg
+
+
+# energy distribution
+/gps/ene/mono 120. GeV

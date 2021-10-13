@@ -1,0 +1,5 @@
+/run/initialize
+/run/printProgress 100
+
+/control/loop loop1.mac pos 0 5.0 0.5
+

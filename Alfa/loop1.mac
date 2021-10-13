@@ -1,0 +1,4 @@
+/gun/position 0 0 {pos} cm
+/run/beamOn 1000
+/control/multiply count {pos} 2
+/control/shell cp A.root out_{count}.root
